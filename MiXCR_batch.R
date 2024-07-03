@@ -10,7 +10,6 @@ path_to_vdj <- "software/vdjtools/vdjtools.jar"
 
 #sample batch file (.tsv, .txt) of the following structure: column1 - sampleID, column2 - SMART (6 letters), column3 - R1 fastq file name (without path), column 4 - R2 fastq file name (without path)
 samples <- read.csv("pipeline_trial/mixcr_preset.tsv", sep = "\t", header = F)
-samples <- samples[c(1, 3, 6),]
 
 #set directories for input and output files
 path_to_fastq <- "shared-with-me/Px_Lupus1-SpA-JIA_NextSeq-IBCH_20042024/"
@@ -29,6 +28,7 @@ setup <- "auto"
 #set export preset
 preset_export <- "--chains TRB --drop-default-fields -uniqueTagCount Molecule -uniqueTagFraction Molecule -nFeature CDR3 -aaFeature CDR3 -vHit -dHit -jHit -positionOf VEnd -positionOf DBegin -positionOf DEnd -positionOf JBegin"
 
+#The default tag pattern in this script is ^N{19}(R1:*)\^tggtatcaacgcagag{SMART}(UMI:TNNNNTNNNNTNNNN)TCT(R2:*). Tag pattern can be changed on line 161
 
 ############### NO NEED TO CHANGE ANYTHING PAST THIS POINT, ONLY EXECUTE COMMANDS ###############
 
