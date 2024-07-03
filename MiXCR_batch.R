@@ -17,9 +17,7 @@ path_to_output_dir <- "/pipeline_trial/"
 
 #set preset and setup for analyze (automatic effective threshold during refineTagsAndSort vs set recordsPerConsensus during assemble)
 preset_analyze <- "milab-human-rna-tcr-umi-race --species hsa -f --assemble-clonotypes-by cdr3"
-preset_analyze <- "generic-amplicon --floating-left-alignment-boundary V --floating-right-alignment-boundary V
-  --floating-left-alignment-boundary J --floating-right-alignment-boundary J
-  --rigid-left-alignment-boundary C --rigid-right-alignment-boundary C --rna --species hsa -f --assemble-clonotypes-by cdr3"
+preset_analyze <- "generic-amplicon --floating-left-alignment-boundary --floating-right-alignment-boundary C --rna --species hsa -f --assemble-clonotypes-by cdr3"
 
 # "auto" (str) - with effective threshold
 # n (int) - with recordsPerConsensus=n and postFilter=null
@@ -28,7 +26,7 @@ setup <- "auto"
 #set export preset
 preset_export <- "--chains TRB --drop-default-fields -uniqueTagCount Molecule -uniqueTagFraction Molecule -nFeature CDR3 -aaFeature CDR3 -vHit -dHit -jHit -positionOf VEnd -positionOf DBegin -positionOf DEnd -positionOf JBegin"
 
-#The default tag pattern in this script is ^N{19}(R1:*)\^tggtatcaacgcagag{SMART}(UMI:TNNNNTNNNNTNNNN)TCT(R2:*). Tag pattern can be changed on line 161
+#The default tag pattern in this script is ^N{19}(R1:*)\^tggtatcaacgcagag{SMART}(UMI:TNNNNTNNNNTNNNN)TCT(R2:*). Tag pattern can be changed on line 159
 
 ############### NO NEED TO CHANGE ANYTHING PAST THIS POINT, ONLY EXECUTE COMMANDS ###############
 
