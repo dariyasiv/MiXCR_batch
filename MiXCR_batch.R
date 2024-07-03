@@ -17,7 +17,7 @@ path_to_output_dir <- "/pipeline_trial/"
 
 #set preset and setup for analyze (automatic effective threshold during refineTagsAndSort vs set recordsPerConsensus during assemble)
 preset_analyze <- "milab-human-rna-tcr-umi-race --species hsa -f --assemble-clonotypes-by cdr3"
-preset_analyze <- "generic-amplicon --floating-left-alignment-boundary --floating-right-alignment-boundary C --rna --species hsa -f --assemble-clonotypes-by cdr3"
+preset_analyze <- "generic-amplicon --floating-left-alignment-boundary --rigid-right-alignment-boundary C --rna --species hsa -f --assemble-clonotypes-by cdr3"
 
 # "auto" (str) - with effective threshold
 # n (int) - with recordsPerConsensus=n and postFilter=null
